@@ -1,0 +1,694 @@
+front = ['B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+right = ['R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R']
+left = ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O']
+back = ['G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G']
+up = ['Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y']
+down = ['W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W']
+
+
+def R():
+    temp = right[1]
+    right[1] = right[5]
+    right[5] = right[7]
+    right[7] = right[3]
+    right[3] = temp
+
+    temp0 = right[0]
+    right[0] = right[2]
+    right[2] = right[8]
+    right[8] = right[6]
+    right[6] = temp0
+
+    temp1 = front[2]
+    front[2] = down[2]
+    down[2] = back[6]
+    back[6] = up[2]
+    up[2] = temp1
+
+    temp2 = front[5]
+    front[5] = down[5]
+    down[5] = back[3]
+    back[3] = up[5]
+    up[5] = temp2
+
+    temp3 = front[8]
+    front[8] = down[8]
+    down[8] = back[0]
+    back[0] = up[8]
+    up[8] = temp3
+
+def RP():
+    temp = right[0]
+    right[0] = right[6]
+    right[6] = right[8]
+    right[8] = right[2]
+    right[2] = temp
+
+    temp0 = right[1]
+    right[1] = right[3]
+    right[3] = right[7]
+    right[7] = right[5]
+    right[5] = temp0
+
+    temp1 = front[2]
+    front[2] = up[2]
+    up[2] = back[6]
+    back[6] = down[5]
+    down[5] = temp1
+
+    temp2 = front[5]
+    front[5] = up[5]
+    up[5] = back[3]
+    back[3] = down[5]
+    down[5] = temp2
+
+    temp3 = front[8]
+    front[8] = up[8]
+    up[8] = back[0]
+    back[0] = down[8]
+    down[8] = temp3
+
+def L():
+    temp = left[7]
+    left[7] = left[3]
+    left[3] = left[1]
+    left[1] = left[5]
+    left[5] = temp
+
+    temp0 = left[0]
+    left[0] = left[2]
+    left[2] = left[8]
+    left[8] = left[6]
+    left[6] = temp0
+
+    temp1 = front[6]
+    front[6] = up[6]
+    up[6] = back[2]
+    back[2] = down[6]
+    down[6] = temp1
+
+    temp2 = front[3]
+    front[3] = up[3]
+    up[3] = back[5]
+    back[5] = down[3]
+    down[3] = temp2
+
+    temp3 = front[0]
+    front[0] = up[0]
+    up[0] = back[8]
+    back[8] = down[0]
+    down[0] = temp3
+
+def LP():
+    temp = left[7]
+    left[7] = left[5]
+    left[5] = left[1]
+    left[1] = left[3]
+    left[3] = temp
+
+    temp0 = left[0]
+    left[0] = left[6]
+    left[6] = left[8]
+    left[8] = left[2]
+    left[2] = temp0
+
+    temp1 = front[6]
+    front[6] = down[6]
+    down[6] = back[2]
+    back[2] = up[6]
+    up[6] = temp1
+
+    temp2 = front[3]
+    front[3] = down[3]
+    down[3] = back[5]
+    back[5] = up[3]
+    up[3] = temp2
+
+    temp3 = front[0]
+    front[0] = down[0]
+    down[0] = back[8]
+    back[8] = up[0]
+    up[0] = temp3
+
+def u():
+    temp = up[1]
+    up[1] = up[5]
+    up[5] = up[7]
+    up[7] = up[3]
+    up[3] = temp
+
+    temp0 = up[0]
+    up[0] = up[2]
+    up[2] = up[8]
+    up[8] = up[6]
+    up[6] = temp0
+
+    temp1 = front[2]
+    front[2] = right[0]
+    right[0] = back[0]
+    back[0] = left[8]
+    left[8] = temp1
+
+    temp2 = front[5]
+    front[5] = right[1]
+    right[1] = back[1]
+    back[1] = left[7]
+    left[7] = temp2
+
+    temp3 = front[8]
+    front[8] = right[2]
+    right[2] = back[2]
+    back[2] = left[6]
+    left[6] = temp3
+
+def UP():
+    temp = up[1]
+    up[1] = up[3]
+    up[3] = up[7]
+    up[7] = up[5]
+    up[5] = temp
+
+    temp0 = up[0]
+    up[0] = up[6]
+    up[6] = up[8]
+    up[8] = up[2]
+    up[2] = temp0
+
+    temp1 = front[2]
+    front[2] = left[8]
+    left[8] = back[0]
+    back[0] = right[0]
+    right[0] = temp1
+
+    temp2 = front[5]
+    front[5] = left[7]
+    left[7] = back[1]
+    back[1] = right[1]
+    right[1] = temp2
+
+    temp3 = front[8]
+    front[8] = left[6]
+    left[6] = back[2]
+    back[2] = right[2]
+    right[2] = temp3
+
+def D():
+    temp = down[7]
+    down[7] = down[3]
+    down[3] = down[1]
+    down[1] = down[5]
+    down[5] = temp
+
+    temp0 = down[8]
+    down[8] = down[6]
+    down[6] = down[0]
+    down[0] = down[2]
+    down[2] = temp0
+
+    temp1 = front[0]
+    front[0] = left[2]
+    left[2] = back[6]
+    back[6] = right[6]
+    right[6] = temp1
+
+    temp2 = front[3]
+    front[3] = left[1]
+    left[1] = back[7]
+    back[7] = right[7]
+    right[7] = temp2
+
+    temp3 = front[6]
+    front[6] = left[0]
+    left[0] = back[8]
+    back[8] = right[8]
+    right[8] = temp3
+
+def DP():
+    temp = down[7]
+    down[7] = down[5]
+    down[5] = down[1]
+    down[1] = down[3]
+    down[3] = temp
+
+    temp0 = down[8]
+    down[8] = down[2]
+    down[2] = down[0]
+    down[0] = down[6]
+    down[6] = temp0
+
+    temp1 = front[0]
+    front[0] = right[6]
+    right[6] = back[6]
+    back[6] = left[2]
+    left[2] = temp1
+
+    temp2 = front[3]
+    front[3] = right[7]
+    right[7] = back[7]
+    back[7] = left[1]
+    left[1] = temp2
+
+    temp3 = front[6]
+    front[6] = right[8]
+    right[8] = back[8]
+    back[8] = left[0]
+    left[0] = temp3
+
+def F():
+    temp = front[1]
+    front[1] = front[5]
+    front[5] = front[7]
+    front[7] = front[3]
+    front[3] = temp
+
+    temp0 = front[0]
+    front[0] =front[2]
+    front[2] = front[8]
+    front[8] = front[6]
+    front[6] = temp0
+
+    temp1 = up[0]
+    up[0] = left[8]
+    left[8] = down[6]
+    down[6] = right[8]
+    right[8] = temp1
+
+    temp2 = up[3]
+    up[3] = left[5]
+    left[5] = down[7]
+    down[7] = right[5]
+    right[5] = temp2
+
+    temp3 = up[6]
+    up[6] = left[2]
+    left[2] = down[8]
+    down[8] = right[2]
+    right[2] = temp3
+
+def FP():
+    temp = front[1]
+    front[1] = front[3]
+    front[3] = front[7]
+    front[7] = front[5]
+    front[5] = temp
+
+    temp0 = front[0]
+    front[0] = front[6]
+    front[6] = front[8]
+    front[8] = front[2]
+    front[2] = temp0
+
+    temp1 = up[0]
+    up[0] = right[8]
+    right[8] = down[6]
+    down[6] = left[8]
+    left[8] = temp1
+
+    temp2 = up[3]
+    up[3] = right[5]
+    right[5] = down[7]
+    down[7] = left[5]
+    left[5] = temp2
+
+    temp3 = up[6]
+    up[6] = right[2]
+    right[2] = down[8]
+    down[8] = left[2]
+    left[2] = temp3
+
+def B():
+    temp = back[1]
+    back[1] = back[5]
+    back[5] = back[7]
+    back[7] = back[3]
+    back[3] = temp
+
+    temp0 = back[0]
+    back[0] = back[2]
+    back[2] = back[8]
+    back[8] = back[6]
+    back[6] = temp0
+
+    temp1 = up[2]
+    up[2] = right[6]
+    right[6] = down[0]
+    down[0] = left[6]
+    left[6] = temp1
+
+    temp2 = up[5]
+    up[5] = right[3]
+    right[3] = down[1]
+    down[1] = left[3]
+    left[3] = temp2
+
+    temp3 = up[8]
+    up[8] = right[0]
+    right[0] = down[2]
+    down[2] = left[0]
+    left[0] = temp3
+
+def BP():
+    temp = back[1]
+    back[1] = back[3]
+    back[3] = back[7]
+    back[7] = back[5]
+    back[5] = temp
+
+    temp0 = back[0]
+    back[0] = back[6]
+    back[6] = back[8]
+    back[8] = back[2]
+    back[2] = temp0
+
+    temp1 = up[2]
+    up[2] = left[6]
+    left[6] = down[0]
+    down[0] = right[6]
+    right[6] = temp1
+
+    temp2 = up[5]
+    up[5] = left[3]
+    left[3] = down[1]
+    down[1] = right[3]
+    right[3] = temp2
+
+    temp3 = up[8]
+    up[8] = left[0]
+    left[0] = down[2]
+    down[2] = right[0]
+    right[0] = temp3
+
+def X():
+    temp = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    for i in temp:
+        temp[i] = front[i]
+
+    front[0] = down[2]
+    front[1] = down[5]
+    front[2] = down[8]
+    front[3] = down[1]
+    front[4] = down[4]
+    front[5] = down[7]
+    front[6] = down[0]
+    front[7] = down[3]
+    front[8] = down[6]
+
+    down[2] = back[2]
+    down[5] = back[5]
+    down[8] = back[8]
+    down[1] = back[1]
+    down[4] = back[4]
+    down[7] = back[7]
+    down[0] = back[0]
+    down[3] = back[3]
+    down[6] = back[6]
+
+    back[2] = up[0]
+    back[5] = up[3]
+    back[8] = up[6]
+    back[1] = up[1]
+    back[4] = up[4]
+    back[7] = up[7]
+    back[0] = up[2]
+    back[3] = up[5]
+    back[6] = up[8]
+
+    up[0] = temp[0]
+    up[3] = temp[3]
+    up[6] = temp[6]
+    up[1] = temp[1]
+    up[4] = temp[4]
+    up[7] = temp[7]
+    up[2] = temp[2]
+    up[5] = temp[5]
+    up[8] = temp[8]
+
+    temp1 = right[0]
+    right[0] = right[2]
+    right[2] = right[8]
+    right[8] = right[6]
+    right[6] = temp1
+
+    temp2 = right[1]
+    right[1] = right[5]
+    right[5] = right[7]
+    right[7] = right[3]
+    right[3] = temp2
+
+    temp1 = left[0]
+    left[0] = left[6]
+    left[6] = left[8]
+    left[8] = left[2]
+    left[2] = temp1
+
+    temp2 = left[1]
+    left[1] = left[3]
+    left[3] = left[7]
+    left[7] = left[5]
+    left[5] = temp2
+
+def Y():
+    temp = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    for i in temp:
+        temp[i] = front[i]
+
+    front[0] = right[6]
+    front[1] = right[3]
+    front[2] = right[0]
+    front[3] = right[7]
+    front[4] = right[4]
+    front[5] = right[1]
+    front[6] = right[8]
+    front[7] = right[5]
+    front[8] = right[2]
+
+    right[6] = back[6]
+    right[3] = back[3]
+    right[0] = back[0]
+    right[7] = back[7]
+    right[4] = back[4]
+    right[1] = back[1]
+    right[8] = back[8]
+    right[5] = back[5]
+    right[2] = back[2]
+
+    back[6] = left[2]
+    back[3] = left[5]
+    back[0] = left[8]
+    back[7] = left[1]
+    back[4] = left[4]
+    back[1] = left[7]
+    back[8] = left[0]
+    back[5] = left[3]
+    back[2] = left[6]
+
+    left[2] = temp[0]
+    left[5] = temp[1]
+    left[8] = temp[2]
+    left[1] = temp[3]
+    left[4] = temp[4]
+    left[7] = temp[5]
+    left[0] = temp[6]
+    left[3] = temp[7]
+    left[6] = temp[8]
+
+    temp1 = up[0]
+    up[0] = up[2]
+    up[2] = up[8]
+    up[8] = up[6]
+    up[6] = temp1
+
+    temp2 = up[1]
+    up[1] = up[5]
+    up[5] = up[7]
+    up[7] = up[3]
+    up[3] = temp2
+
+    temp1 = down[0]
+    down[0] = down[6]
+    down[6] = down[8]
+    down[8] = down[2]
+    down[2] = temp1
+
+    temp2 = down[1]
+    down[1] = down[3]
+    down[3] = down[7]
+    down[7] = down[5]
+    down[5] = temp2
+
+def Z():
+    temp = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    for i in temp:
+        temp[i] = up[i]
+
+    up[0] = left[8]
+    up[1] = left[7]
+    up[2] = left[6]
+    up[3] = left[5]
+    up[4] = left[4]
+    up[5] = left[3]
+    up[6] = left[2]
+    up[7] = left[1]
+    up[8] = left[0]
+
+    left[8] = down[6]
+    left[7] = down[3]
+    left[6] = down[0]
+    left[5] = down[7]
+    left[4] = down[4]
+    left[3] = down[1]
+    left[2] = down[8]
+    left[1] = down[5]
+    left[0] = down[2]
+
+    down[6] = right[8]
+    down[3] = right[7]
+    down[0] = right[6]
+    down[7] = right[5]
+    down[4] = right[4]
+    down[1] = right[3]
+    down[5] = right[2]
+    down[2] = right[1]
+    down[0] = right[0]
+
+    right[8] = temp[0]
+    right[7] = temp[1]
+    right[6] = temp[2]
+    right[5] = temp[3]
+    right[4] = temp[4]
+    right[3] = temp[5]
+    right[2] = temp[6]
+    right[1] = temp[7]
+    right[0] = temp[8]
+
+    temp1 = front[0]
+    front[0] = front[2]
+    front[2] = front[8]
+    front[8] = front[6]
+    front[6] = temp1
+
+    temp2 = front[1]
+    front[1] = front[5]
+    front[5] = front[7]
+    front[7] = front[3]
+    front[3] = temp2
+
+    temp1 = back[0]
+    back[0] = back[6]
+    back[6] = back[8]
+    back[8] = back[2]
+    back[2] = temp1
+
+    temp2 = back[1]
+    back[1] = back[2]
+    back[3] = back[7]
+    back[7] = back[5]
+    back[5] = temp2
+
+
+
+
+
+
+
+def show():
+    print('     ', right[0], right[1], right[2])
+    print('     ', right[3], right[4], right[5])
+    print('     ', right[6], right[7], right[8])
+    print(back[0], back[1], back[2], down[0], down[1], down[2], front[0], front[1], front[2], up[0], up[1], up[2])
+    print(back[3], back[4], back[5], down[3], down[4], down[5], front[3], front[4], front[5], up[3], up[4], up[5])
+    print(back[6], back[7], back[8], down[6], down[7], down[8], front[6], front[7], front[8], up[6], up[7], up[8])
+    print('     ', left[0], left[1], left[2])
+    print('     ', left[3], left[4], left[5])
+    print('     ', left[6], left[7], left[8])
+
+def checkDown():
+    check = []
+    n = 0
+    while n < 4:
+        if down[(2*n+1)] != 'white':
+            check = check + (2*n+1)
+        n+=1
+    for n in check:
+        print(check[n])
+
+def checkDownRotate():
+    i = 0
+    flag = False
+    while i < 4:
+        if down[5] != 'white':
+            flag = True
+            break
+        else:
+            D()
+    return flag
+
+
+def check2ndLine():
+    if front[1] == 'white':
+        if checkDownRotate():
+            FP()
+            D()
+            LP()
+
+    elif up[1] == 'white':
+        if checkDownRotate():
+            R()
+            R()
+
+    elif back[1] == 'white':
+        if checkDownRotate():
+            u()
+            u()
+            RP()
+
+    elif left[1] == 'white':
+        if checkDownRotate():
+            UP()
+            RP()
+
+
+    elif back[5] == 'white':
+        if checkDownRotate():
+            R()
+
+    elif front[7] == 'white':
+        if checkDownRotate():
+            F()
+            F()
+            UP()
+            RP()
+            F()
+            R()
+
+
+    elif up[7] == 'white':
+        if checkDownRotate():
+            F()
+
+    elif back[3] == 'white':
+        if checkDownRotate():
+            D()
+            L()
+
+    elif back[5] == 'white':
+        if checkDownRotate():
+            DP()
+            R()
+            D()
+
+    elif back[5] == 'white':
+        if checkDownRotate():
+            pass
+
+
+def scramble():
+    move = [u, R, L, F, D, B, ]
+    pass
+
+
+show()
+
+
+
+
